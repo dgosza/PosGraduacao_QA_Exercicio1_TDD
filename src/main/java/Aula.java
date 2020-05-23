@@ -1,12 +1,13 @@
 public class Aula {
-    public int alunosAulaMusculacao, alunosAulaNatacao, alunosAulaGinastica;
+    private int alunosAulaMusculacao, alunosAulaNatacao, alunosAulaGinastica;
 
     public int getAlunosAulaMusculacao() {
         return alunosAulaMusculacao;
     }
 
-    public void setAlunosAulaMusculacao(int alunosAulaMusculacao) {
+    public int setAlunosAulaMusculacao(int alunosAulaMusculacao) {
         this.alunosAulaMusculacao = alunosAulaMusculacao;
+        return alunosAulaMusculacao;
     }
 
     public int getAlunosAulaNatacao() {
@@ -25,6 +26,7 @@ public class Aula {
         this.alunosAulaGinastica = alunosAulaGinastica;
     }
 
+    //Constructor
     Aula(){
         setAlunosAulaMusculacao(4);
         setAlunosAulaNatacao(8);

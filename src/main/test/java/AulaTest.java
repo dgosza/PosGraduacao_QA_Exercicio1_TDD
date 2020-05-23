@@ -1,6 +1,13 @@
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
+
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(Aula.class)
 public class AulaTest {
 
     @Test
@@ -141,6 +148,24 @@ public class AulaTest {
 
         //ACT
         String resultado = aula.verificaAlunosAula("Natacao");
+
+        //ASSERT
+        Assert.assertEquals(resultado, esperado);
+    }
+
+    //MOCK
+    @Test
+    public void mudarAlunosTurmaMusculacao() throws Exception {
+        //ARRANGE
+        Aula aula = new Aula();
+        final String METHOD = "getAlunosAulaMusculacao";
+        Aula spy = PowerMockito.spy(aula);
+        PowerMockito.when(spy, METHOD).thenReturn((int) 0);
+
+        int esperado = 1;
+
+        //ACT
+        int resultado = spy.setAlunosAulaMusculacao(1);
 
         //ASSERT
         Assert.assertEquals(resultado, esperado);
