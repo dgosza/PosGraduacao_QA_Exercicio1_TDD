@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Aula {
     private int alunosAulaMusculacao, alunosAulaNatacao, alunosAulaGinastica;
 
